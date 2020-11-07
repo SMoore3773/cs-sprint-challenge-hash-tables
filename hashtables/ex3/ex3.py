@@ -2,8 +2,10 @@ def intersection(arrays):
     """
     YOUR CODE HERE
     """
-    # Your code here
-
+    for array in arrays:
+        arrayDict = {val: ind for ind, val in enumerate(array)}
+        # dictVals = {val: ind for ind, val in enumerate(vals)}
+        print(arrayDict)
     return result
 
 
