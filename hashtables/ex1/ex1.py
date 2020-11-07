@@ -4,18 +4,19 @@ def get_indices_of_item_weights(weights, length, limit):
     """
     # set weights to a dictionary of weights with the value as the index of the list
     dictWeights = {val: ind for ind, val in enumerate(weights)}
-    print(dictWeights)
-    print('limit', limit)
+
     for item in dictWeights:
-        print('item', item)
+        # sets value for second item to search dictionary
         second = limit - item
-        print('second', second)
+        # edge case for duplicate item
         if len(dictWeights) < length:
             return (dictWeights[item], 0)
+        # for if matching package is found
         if second in dictWeights:
             if dictWeights[item] >= dictWeights[second]:
-                print(dictWeights[item], dictWeights[second])
+                # case where item index is greater than second index
                 return(dictWeights[item], dictWeights[second])
             else:
+                # case where second index is greater than item index
                 return (dictWeights[second], dictWeights[item])
     return None
